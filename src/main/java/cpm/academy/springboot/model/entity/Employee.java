@@ -31,15 +31,15 @@ public class Employee extends ModifierOptions{
   private String dob;
   @Column(name = "salary")
   private Integer salary;
-//  @ManyToOne
-//  @JoinColumn(name = "dept_id")
-//  private Department department;
-//  @OneToMany
-//  @JoinColumn(name = "employee_id")
-//  private List<JobEmployee> jobs;
-//  @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
-//  @JoinColumn(name = "employee_id")
-//  private List<Address> addresses;
+  @ManyToOne
+  @JoinColumn(name = "dept_id")
+  private Department department;
+  @OneToMany
+  @JoinColumn(name = "employee_id")
+  private List<JobEmployee> jobs;
+  @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
+  @JoinColumn(name = "employee_id")
+  private List<Address> addresses;
   @Embedded
   private DocData docData;
 }
